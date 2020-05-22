@@ -16,10 +16,18 @@
 """
 
 def ask_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
+    dialog = {'Как дела?': 'Хорошо', 'Что делаешь?': 'Программирую', 'На каком языке?': 'Python'}
+    while True:
+        message = input('Задайте вопрос: ')
+        for item in dialog:
+            if message == item:
+               print(dialog.get(message))
+               break
+            elif message != 'Пока':
+              print('Увы, я вас не понимаю')
+              break
+        if message == 'Пока':
+            break
     
 if __name__ == "__main__":
     ask_user()
