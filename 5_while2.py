@@ -21,7 +21,7 @@ def ask_user():
     while message != 'Пока':
         message = input('Задайте вопрос: ')
         if message in dialog:
-            print(dialog.get(message))
+            print(dialog[message])
         elif message != 'Пока':
           print('Увы, я вас не понимаю')
         

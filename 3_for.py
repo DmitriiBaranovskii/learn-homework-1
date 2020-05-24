@@ -15,9 +15,9 @@ def main():
 
   grades = [{'school_class': f'{school_class}a', 'scored':[random.randrange(1, 5, 1) for i in range(5)]} for school_class in range(5)]
 
-  gpa = {grade['school_class']: sum(grade['scored']) / len(grade['scored']) for grade in grades}
-  gpa['Среднее по школе'] = sum(gpa.values())
-  print(gpa)
+  school_average = {grade['school_class']: sum(grade['scored']) / len(grade['scored']) for grade in grades}
+  school_average['school_average'] = sum(school_average.values()) / len(school_average)
+  print(school_average)
     
 if __name__ == "__main__":
     main()
