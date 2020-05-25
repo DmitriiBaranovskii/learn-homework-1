@@ -11,10 +11,9 @@
 
 
 def ask_user():
-    while True:
+    message = ''
+    while message != 'Хорошо':
         message = input('Как дела? ')
-        if message == 'Хорошо':
-            break
 
     
 if __name__ == "__main__":

@@ -12,22 +12,12 @@
 import random
 
 def main():
-  grades = []
 
-  for school_class in range(5):
-      grades.append({'school_class': f'{school_class}a', 'scored' : [random.randrange(1, 5, 1) for i in range(5)]})
+  grades = [{'school_class': f'{school_class}a', 'scored':[random.randrange(1, 5, 1) for i in range(5)]} for school_class in range(5)]
 
-  print(grades)
-
-  gpa_summ = 0
-  gpa_class = 0
-
-  for grade in grades:
-      gpa_class = sum(grade['scored']) / len(grade['scored'])
-      print(f'gpa for class {grade["school_class"]} is {gpa_class}')
-      gpa_summ += gpa_class
-
-  print(f'Total gpa is {gpa_summ/len(grades)}')
+  school_average = {grade['school_class']: sum(grade['scored']) / len(grade['scored']) for grade in grades}
+  school_average['school_average'] = sum(school_average.values()) / len(school_average)
+  print(school_average)
     
 if __name__ == "__main__":
     main()
